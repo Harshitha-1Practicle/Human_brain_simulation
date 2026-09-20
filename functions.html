@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Functions | Human Brain Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>⚙️ Brain Functions</h1>
+        <p>Browse the systems behind movement, memory, language and emotion.</p>
+    </header>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">🏠 Dashboard</a>
+        <a href="explorer.html">🧠 Brain Explorer</a>
+        <a href="functions.html" aria-current="page">⚙️ Functions</a>
+        <a href="resources.html">📚 Resources</a>
+        <a href="index.html#quiz">🎯 Quiz</a>
+    </nav>
+    <main class="page-shell">
+        <section class="page-intro">
+            <h2>A guided tour of brain function</h2>
+            <p>Use the arrows to move between short lesson slides. The cards connect a structure with the kind of work it performs every moment.</p>
+        </section>
+        <section class="function-deck panel" aria-label="Brain function slides">
+            <div class="function-track" id="functionTrack">
+                <div class="function-page">
+                    <article class="brain-card"><div class="icon">🧠</div><h3>Memory</h3><p>The hippocampus helps create new memories, while connected cortical networks store and retrieve knowledge.</p></article>
+                    <article class="brain-card"><div class="icon">🏃</div><h3>Movement</h3><p>The motor cortex plans voluntary actions and the cerebellum refines balance, timing and precision.</p></article>
+                </div>
+                <div class="function-page">
+                    <article class="brain-card"><div class="icon">🗣️</div><h3>Language</h3><p>Distributed language networks help us understand words, choose meaning and produce speech.</p></article>
+                    <article class="brain-card"><div class="icon">🎨</div><h3>Vision</h3><p>Visual pathways transform light into information about edges, color, movement and objects.</p></article>
+                </div>
+                <div class="function-page">
+                    <article class="brain-card"><div class="icon">💛</div><h3>Emotion</h3><p>Emotion networks evaluate experiences, prepare the body to respond and shape memory.</p></article>
+                    <article class="brain-card"><div class="icon">🌙</div><h3>Sleep &amp; Rhythm</h3><p>Brain circuits coordinate sleep, wakefulness and daily biological rhythms.</p></article>
+                </div>
+            </div>
+            <div class="deck-controls">
+                <button type="button" id="previous" aria-label="Previous function slide">←</button>
+                <button type="button" id="next" aria-label="Next function slide">→</button>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">🧠 Human Brain Interactive Simulation · Educational Web Project</footer>
+    <script>
+        const track = document.getElementById('functionTrack');
+        const pages = document.querySelectorAll('.function-page');
+        let slide = 0;
+        function moveDeck(step) {
+            slide = (slide + step + pages.length) % pages.length;
+            track.style.transform = `translateX(-${slide * 100}%)`;
+        }
+        document.getElementById('previous').addEventListener('click', () => moveDeck(-1));
+        document.getElementById('next').addEventListener('click', () => moveDeck(1));
+    </script>
+</body>
+</html>

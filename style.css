@@ -1,0 +1,30 @@
+/* Project stylesheet placeholder */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --ink: #f7f3ff; --muted: #c7c1d6; --pink: #ffb1df; --cyan: #70e7ff; --violet: #743cff; --panel: rgba(255,255,255,0.08); --line: rgba(255,255,255,0.15); }
+html { scroll-behavior: smooth; }
+body { min-height: 100vh; color: var(--ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(circle at top, #302050, #100d24 55%, #05050d); }
+.site-header { padding: 42px 20px 30px; text-align: center; background: rgba(0,0,0,0.35); border-bottom: 1px solid var(--line); }
+.site-header h1 { color: var(--pink); font-size: clamp(30px, 5vw, 48px); text-shadow: 0 0 10px #ff4fb7, 0 0 25px #ff4fb7; }
+.site-header p { margin-top: 12px; color: var(--muted); font-family: Arial, Helvetica, sans-serif; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 18px; background: rgba(0,0,0,0.25); }
+.site-nav a { padding: 11px 18px; color: white; font: 15px Arial, Helvetica, sans-serif; text-decoration: none; background: var(--violet); border-radius: 24px; transition: 0.25s ease; }
+.site-nav a:hover, .site-nav a[aria-current='page'] { background: #a66bff; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(150,80,255,0.5); }
+.page-shell { width: min(1120px, 92%); margin: 0 auto; padding: 54px 0 70px; }
+.page-intro { max-width: 760px; margin-bottom: 34px; }
+.page-intro h2 { margin-bottom: 14px; color: var(--cyan); font-size: clamp(30px, 5vw, 44px); }
+.page-intro p, .panel p, .brain-card p, .resource-page-card p { color: var(--muted); line-height: 1.7; font-family: Arial, Helvetica, sans-serif; }
+.panel, .brain-card, .resource-page-card { padding: 25px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 14px 30px rgba(0,0,0,0.2); }
+.brain-grid, .resource-page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.brain-card { min-height: 210px; transition: 0.25s ease; }
+.brain-card:hover, .resource-page-card:hover { transform: translateY(-5px); border-color: rgba(112,231,255,0.6); }
+.brain-card .icon, .resource-page-card .icon { margin-bottom: 16px; font-size: 34px; }
+.brain-card h3, .resource-page-card h3 { margin-bottom: 10px; color: var(--pink); }
+.page-footer { padding: 28px 20px; color: #aaa; text-align: center; font: 14px/1.8 Arial, Helvetica, sans-serif; background: rgba(0,0,0,0.4); }
+.function-deck { overflow: hidden; }
+.function-track { display: flex; transition: transform 0.45s ease; }
+.function-page { min-width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+.deck-controls { display: flex; justify-content: center; gap: 12px; margin-top: 22px; }
+.deck-controls button { width: 44px; height: 44px; color: white; font-size: 22px; background: var(--violet); border: 0; border-radius: 50%; cursor: pointer; }
+.deck-controls button:hover { background: #a66bff; }
+@media (max-width: 650px) { .function-page { grid-template-columns: 1fr; } .site-nav a { flex: 1 1 140px; text-align: center; } }
+}
